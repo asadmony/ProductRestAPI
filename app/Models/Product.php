@@ -18,4 +18,9 @@ class Product extends Model
         'soldOutFlag',
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

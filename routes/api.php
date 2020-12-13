@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', 'PassportController@login');
-Route::post('register', 'PassportController@register');
+Route::post('login', 'UserController@login');
+Route::post('register', 'UserController@register');
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
 Route::middleware('auth:api')->group( function () {
-    Route::get('user', 'PassportController@details');
+    Route::get('user', 'UserController@details');
+    Route::resource('products', 'ProductController');
 });
